@@ -5,13 +5,7 @@ import {KeycloakAuthGuard} from "keycloak-angular";
 import {AuthGuardService} from "./security/auth-guard.service";
 
 const routes: Routes = [
-  {
-    path:'', pathMatch: 'full', redirectTo:'home'
-  },
-  {
-    path:'home',
-    component: AppComponent
-  }
+
 ];
 
 @NgModule({

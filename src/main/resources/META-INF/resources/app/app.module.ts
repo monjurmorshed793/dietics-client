@@ -6,13 +6,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from "@angular/common/http";
 import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
         url: 'http://localhost:9080/auth',
-        realm: 'edietics',
+        realm: 'dietics-application',
         clientId: 'web-client',
       },
       bearerExcludedUrls: ['/assets','/clients/public'],
@@ -32,7 +33,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    MatSidenavModule
   ],
   providers: [
     {
