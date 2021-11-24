@@ -13,16 +13,18 @@ function initializeKeycloak(keycloak: KeycloakService) {
     keycloak.init({
       config: {
         url: 'http://localhost:9080/auth',
-        realm: 'dietics-application',
+        realm: 'dietics',
         clientId: 'web-client',
       },
       bearerExcludedUrls: ['/assets','/clients/public'],
       initOptions: {
-        onLoad: 'check-sso',
+        checkLoginIframe: false,
+        /*onLoad: 'check-sso',
         silentCheckSsoRedirectUri:
-          window.location.origin + '/assets/silent-check-sso.html',
+          window.location.origin + '/assets/silent-check-sso.html',*/
       },
-    });
+    },
+      );
 }
 @NgModule({
   declarations: [

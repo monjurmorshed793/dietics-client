@@ -22,6 +22,7 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.keycloak.isLoggedIn().then((res)=>{
       this.isLoggedIn = res;
+      console.log(this.isLoggedIn);
       if(this.isLoggedIn){
         this.testResponseService.getResponse().subscribe((res)=>{
           console.log(res);
