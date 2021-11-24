@@ -12,7 +12,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     keycloak.init({
       config: {
         url: 'http://localhost:9080/auth',
-        realm: 'dietics',
+        realm: 'edietics',
         clientId: 'web-client',
       },
       bearerExcludedUrls: ['/assets','/clients/public'],
